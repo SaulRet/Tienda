@@ -1,25 +1,97 @@
 <!DOCTYPE html>
-<html>
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta
+y demás etiquetas para la semántica del body-->
+<html lang="es">
     <head>
         <title>Tienda en línea</title>
         <meta charset="UTF-8">
+        <meta name="description" content="Esta página contienen etiquetas del tipo HTML5 y luego enlaces o definición de estilos CSS3">
+        <meta name="keywords" content="html5, css3, web, fidélitas">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <a href="ejemplo9.html">Back</a>|
-        <a href="index.html">Home</a>|
-        <a href="ejemplo2.html">Next</a><br>
-        <div>
-            <h1 style="text-align: center">Home</h1>
-            <p>Bienvenidos a la página de la Tienda en línea... </p>
-        </div>
+        <header id="encabezado"><!-- Etiqueta para ofrecerle al browser info de que es un encabezado -->
+            <h1>TechShop</h1>            
+        </header>
+        <nav id="menu"> <!-- Esta etiqueta es para ilustrarle al browser que posiblemente es un menú-->
+            <a href="ejemplo9.html">Back</a>|
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral"> <!-- Etiqueta para indicar que es una barra lateral al final, puede ser a la izquierda o a la derecha, y pueden ser varias -->  
+            <h2>Productos más vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, ridiculus vel iaculis at aliquam lacus mollis, accumsan ut litora non facilisi ad. Euismod dis potenti posuere facilisis montes laoreet maecenas rhoncus augue iaculis per, sagittis nullam litora ultrices duis blandit turpis nibh vestibulum id mollis eleifend, faucibus penatibus parturient luctus himenaeos vitae praesent venenatis imperdiet conubia. Semper ante egestas erat aptent orci sed rutrum fusce eu, nulla potenti vestibulum facilisi viverra feugiat torquent odio id, cum platea porta nam mi himenaeos laoreet posuere. </p>
+        </aside>
+        <section id="contenido">
+            <h2>Artículos principales</h2>
+            <article>
+                <header>Portátil XRT 5000</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, arcu nisi senectus nostra mauris parturient placerat venenatis, odio metus in ante vel pellentesque. Mauris rhoncus vulputate ligula nibh iaculis natoque dictum, class tortor sem consequat phasellus a, imperdiet arcu inceptos luctus lacus justo. A netus tempor duis et rutrum tincidunt justo magna maecenas conubia blandit, himenaeos purus volutpat ad pretium leo imperdiet risus aliquam scelerisque viverra, vel sollicitudin at tristique accumsan augue turpis quisque fringilla curae.</p>
+                <footer>Agregar al carrito</footer>
+                <figure>
+                    <img src="images/equipo1.jpg" alt="Desktop XRT"/>
+                </figure>
+            </article>
+            <article>
+                <header>Alienware ATD 9000</header>
+                <p>Está inspirada en la película <cite>Aliens el octavo pasajero </cite>In ridiculus pretium est primis vivamus iaculis potenti, varius curae aliquam vel molestie. Rutrum sodales dapibus egestas purus nam fermentum tellus at nostra diam conubia, lacus viverra lectus nulla fusce luctus porttitor per fringilla.</p>
+                <footer>Agregar al carrito</footer>
+                <figure>
+                    <img src="images/equipo2.jpg" alt="Alienware"/>
+                    <figcaption>Más vendido</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Impresora 3D Portable</header>
+                <p>Dictum hac platea non cubilia lobortis rutrum bibendum vulputate, pretium nascetur fringilla tellus viverra ullamcorper ac conubia malesuada, posuere penatibus elementum enim aliquet velit magna. Enim eros vel gravida rhoncus purus ut magna, penatibus integer cum ultrices ad aenean, eleifend parturient dignissim conubia vulputate class. Conubia diam ante tempor litora ultrices cursus bibendum tempus, sociis hac mus varius posuere augue quam iaculis, eu cum himenaeos lacinia rhoncus viverra ullamcorper. Mauris nibh cum vestibulum enim proin hac interdum himenaeos netus, varius tortor lectus blandit libero tincidunt massa metus commodo odio, pretium vitae mi leo molestie arcu sem justo.
+                <footer>Agregar al carrito</footer>
+                <figure>
+                    <img src="images/equipo3.jpg" alt="3D Print"/>
+                    <figcaption>Más económica</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Resumen de líneas generales</header>
+                <table border="0">
+                    <thead>
+                        <tr id="encabezadoTabla">
+                            <th>Código</th>
+                            <th>Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen">
+                        <tr>
+                            <td>1</td>
+                            <td>Dictum hac platea non cubilia lobortis rutrum bibendum vulputate, pretium nascetur fringilla </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>tellus viverra ullamcorper ac conubia malesuada, posuere</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>penatibus elementum enim aliquet velit magna. Enim eros vel gravida</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>rhoncus purus ut magna, penatibus integer cum ultrices ad aenean, eleifend parturient</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>dignissim conubia vulputate class. Conubia diam ante tempor litora ultrices</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>cursus bibendum tempus, sociis hac mus varius posuere augue quam iaculis, eu cum himenaeos lacinia </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        <p style="text-align: left">Lorem ipsum dolor sit amet consectetur adipiscing elit, arcu nisi senectus nostra mauris parturient placerat venenatis, odio metus in ante vel pellentesque. Mauris rhoncus vulputate ligula nibh iaculis natoque dictum, class tortor sem consequat phasellus a, imperdiet arcu inceptos luctus lacus justo. A netus tempor duis et rutrum tincidunt justo magna maecenas conubia blandit, himenaeos purus volutpat ad pretium leo imperdiet risus aliquam scelerisque viverra, vel sollicitudin at tristique accumsan augue turpis quisque fringilla curae.</p>
+            </article>
 
-        <p style="text-align: right">In ridiculus pretium est primis vivamus iaculis potenti, varius curae aliquam vel molestie. Rutrum sodales dapibus egestas purus nam fermentum tellus at nostra diam conubia, lacus viverra lectus nulla fusce luctus porttitor per fringilla.</p>
-
-        <p style="text-align: center">Dictum hac platea non cubilia lobortis rutrum bibendum vulputate, pretium nascetur fringilla tellus viverra ullamcorper ac conubia malesuada, posuere penatibus elementum enim aliquet velit magna. Enim eros vel gravida rhoncus purus ut magna, penatibus integer cum ultrices ad aenean, eleifend parturient dignissim conubia vulputate class. Conubia diam ante tempor litora ultrices cursus bibendum tempus, sociis hac mus varius posuere augue quam iaculis, eu cum himenaeos lacinia rhoncus viverra ullamcorper. Mauris nibh cum vestibulum enim proin hac interdum himenaeos netus, varius tortor lectus blandit libero tincidunt massa metus commodo odio, pretium vitae mi leo molestie arcu sem justo.</p>
+        </section>
         <br>
         <br>
-        <p>Última línea</p>
+        <footer id="piepagina">Derechos Reservados &COPY; 2022 <address style="display: inline">84576512</address></footer> 
     </body>
 </html>
