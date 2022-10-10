@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta
+y demás etiquetas para la semántica del body-->
+<html lang="es">
+    <head>
+        <title>Tienda en línea</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Esta página contienen etiquetas del tipo HTML5 y luego enlaces o definición de estilos CSS3">
+        <meta name="keywords" content="html5, css3, web, fidélitas">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header id="encabezado"><!-- Etiqueta para ofrecerle al browser info de que es un encabezado -->
+            <h1>TechShop</h1>            
+        </header>
+        <nav id="menu"> <!-- Esta etiqueta es para ilustrarle al browser que posiblemente es un menú-->
+            <a href="ejemplo9.html">Back</a>|
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral"> <!-- Etiqueta para indicar que es una barra lateral al final, puede ser a la izquierda o a la derecha, y pueden ser varias -->  
+            <h2>Productos más vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, ridiculus vel iaculis at aliquam lacus mollis, accumsan ut litora non facilisi ad. Euismod dis potenti posuere facilisis montes laoreet maecenas rhoncus augue iaculis per, sagittis nullam litora ultrices duis blandit turpis nibh vestibulum id mollis eleifend, faucibus penatibus parturient luctus himenaeos vitae praesent venenatis imperdiet conubia. Semper ante egestas erat aptent orci sed rutrum fusce eu, nulla potenti vestibulum facilisi viverra feugiat torquent odio id, cum platea porta nam mi himenaeos laoreet posuere. </p>
+        </aside>
+        <section id="contenido">
+            <h2>Ejemplo de videos</h2>
+            <article>
+                <header><h3>Torpedo</h3></header>                
+                <figure>
+                    <video width="320" height="240" controls autoplay muted>
+                        <source src="videos/torpedo.mp4" type="video/mp4">
+                        Su explorador no soporta el formato del video <code>video</code>
+                    </video>
+                    <figcaption>Realizada en 2021</figcaption>
+                </figure>
+            </article>
+        </section>
+        <footer id="piepagina">Derechos Reservados &COPY; 2022 <address style="display: inline">84576512</address></footer> 
+    </body>
+</html>
