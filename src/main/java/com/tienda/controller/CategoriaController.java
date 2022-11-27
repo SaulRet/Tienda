@@ -42,7 +42,7 @@ public class CategoriaController {
         return "/categoria/modifica";
     }
 
-    @GetMapping("/categoriaeliminar/{idCategoria}")
+    @GetMapping("/categoria/eliminar/{idCategoria}")
     public String eliminarCategoria(Categoria categoria) {
         categoriaService.delete(categoria);
         return "redirect:/categoria/listado";

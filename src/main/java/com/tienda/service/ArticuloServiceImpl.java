@@ -26,6 +26,12 @@ public class ArticuloServiceImpl implements ArticuloService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public Articulo getArticulo(Articulo articulo) {
+        return articuloDao.findById(articulo.getIdArticulo()).orElse(null);
+    }
+
+    @Override
     @Transactional
     public void save(Articulo articulo) {
         articuloDao.save(articulo);
@@ -35,12 +41,6 @@ public class ArticuloServiceImpl implements ArticuloService {
     @Transactional
     public void delete(Articulo articulo) {
         articuloDao.delete(articulo);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Articulo getArticulo(Articulo articulo) {
-        return articuloDao.findById(articulo.getIdArticulo()).orElse(null);
     }
 
 }

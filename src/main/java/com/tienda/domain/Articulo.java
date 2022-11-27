@@ -25,13 +25,13 @@ public class Articulo implements Serializable {
     public Articulo() {
     }
 
-    public Articulo(Long idCategoria, String descripcion, String detalle, Double precio, int existencias, boolean activa) {
+    public Articulo(Long idCategoria, String descripcion, String detalle, Double precio, int existencias, boolean activo) {
         this.idCategoria = idCategoria;
         this.descripcion = descripcion;
         this.detalle = detalle;
         this.precio = precio;
         this.existencias = existencias;
-        this.activo = activa;
+        this.activo = activo;
     }
 
 }

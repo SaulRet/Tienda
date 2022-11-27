@@ -9,20 +9,36 @@
     <body>
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
-            <h2>Datos de Categoría</h2>
-            <a th:href="@{/categoria/listado}">Regresar</a>
+            <h2 th:text="#{articulo.datos}">Datos del Artículo</h2>
+            <a th:href="@{/articulo/listado}" th:text="#{accion.regresar}">Regresar</a>
             <br/>
-            <form th:action="@{/categoria/guardar}"
+            <form th:action="@{/articulo/guardar}"
                   method="post"
-                  th:object="${categoria}">
+                  th:object="${articulo}">
                 <input type="hidden" name="idArticulo" th:field="*{idArticulo}"/>
-                <label for="descripcion">Descripción:</label>
+                <label for="categoria" th:text="#{articulo.categoria}">Categoría:</label>
+                <select th:field="*{idCategoria}">
+                   <option th:each="categoria : ${categorias}"
+                            th:value="${categoria.idCategoria}"
+                            th:text="${categoria.descripcion}"/> 
+                </select>
+                <br/>
+                <label for="descripcion" th:text="#{articulo.descripcion}">Descripción:</label>
                 <input type="text" name="descripcion" th:field="*{descripcion}"/>
                 <br/>
-                <label for="activo">Activa</label>
+                <label for="activo" th:text="#{articulo.activo}">Activo</label>
                 <input type="checkbox" name="activo" th:field="*{activo}"/>
                 <br/><br/>
-                <input type="submit" name="guardar" value="Guardar"/>
+                <label for="detalle" th:text="#{articulo.detalle}">Detalle</label>
+                <input type="text" name="detalle" th:field="*{detalle}"/>
+                <br/>
+                <label for="descripcion" th:text="#{articulo.precio}">Precio</label>
+                <input type="text" name="precio" th:field="*{precio}"/>
+                <br/>
+                <label for="existencias" th:text="#{articulo.existencias}">Existencias</label>
+                <input type="text" name="existencias" th:field="*{existencias}"/>
+                <br/>
+                <button type="submit" name="guardar" th:text="#{accion.guardar}"/>
             </form>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>

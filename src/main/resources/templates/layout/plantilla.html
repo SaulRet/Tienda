@@ -4,6 +4,7 @@
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:fragment="header" class="header"><!-- Etiqueta para ofrecerle al browser info de que es un encabezado -->        
@@ -11,22 +12,27 @@
                 <a th:href="@{/}" class="logo nav-link">TechShop</a>
                 <ul class="nav-menu">
                     <li class="nav-menu-item">
-                        <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">Clientes</a>
+                        <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}"
+                           th:text="#{plantilla.clientes}">Clientes</a>
                     </li>
                     <li class="nav-menu-item">
-                        <a class="nav-menu-link nav-link" th:href="@{/categoria/listado}">Categorías</a>
+                        <a class="nav-menu-link nav-link" th:href="@{/categoria/listado}"
+                           th:text="#{plantilla.categorias}">Categorías</a>
                     </li>
                     <li class="nav-menu-item">
-                        <a class="nav-menu-link nav-link" th:href="@{/articulo/listado}">Artículos</a>
+                        <a class="nav-menu-link nav-link" th:href="@{/articulo/listado}"
+                           th:text="#{plantilla.articulos}">Artículos</a>
                     </li>
 
                 </ul>
-            </nav>>
+            </nav>
             <h1>TechShop</h1>
         </header>
 
         <footer th:fragment="footer" class="footer">
-            <p>&COPY Derechos Reservados 2022</p>
+            <a th:href="@{/(lang=es)}">ES</a> |
+            <a th:href="@{/(lang=en)}">EN</a>
+            <p>&COPY [[#{plantilla.derechos}]]</p>
         </footer>
     </body>
 </html>

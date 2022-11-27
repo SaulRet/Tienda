@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class CategoriaServiceImpl implements CategoriaService {
 
     @Autowired
-    private CategoriaDao categoriaDao;
+    CategoriaDao categoriaDao;
 
     @Override
     @Transactional(readOnly = true)
@@ -26,6 +26,12 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public Categoria getCategoria(Categoria categoria) {
+        return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
+    }
+
+    @Override
     @Transactional
     public void save(Categoria categoria) {
         categoriaDao.save(categoria);
@@ -35,12 +41,6 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Transactional
     public void delete(Categoria categoria) {
         categoriaDao.delete(categoria);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Categoria getCategoria(Categoria categoria) {
-        return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
     }
 
 }
