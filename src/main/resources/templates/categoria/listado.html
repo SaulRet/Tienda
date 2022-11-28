@@ -16,16 +16,16 @@
                         <tr>
                             <th th:text="#{categoria.descripcion}">Descripción</th>
                             <th th:text="#{categoria.activo}">Activo</th>
-                            <th th:text="#{accion.actualizar}">Modificar</th>
-                            <th th:text="#{accion.eliminar}">Eliminar</th>
+                            <th th:text="#{accion.actualizar}" sec:authorize="hasRole('ROLE_ADMIN')">Modificar</th>
+                            <th th:text="#{accion.eliminar}" sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="categoria : ${categorias}">
                             <td th:text="${categoria.descripcion}"></td>
                             <td><input type="checkbox" name="activo" th:checked="${categoria.activo}" disabled="true"></td>
-                            <td><a th:href="@{/categoria/eliminar/} + ${categoria.idCategoria}" th:text="#{accion.eliminar}">Eliminar</a></td>
-                            <td><a th:href="@{/categoria/modificar/} + ${categoria.idCategoria}" th:text="#{accion.actualizar}">Modificar</a></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/categoria/eliminar/} + ${categoria.idCategoria}" th:text="#{accion.eliminar}">Eliminar</a></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/categoria/modificar/} + ${categoria.idCategoria}" th:text="#{accion.actualizar}">Modificar</a></td>
                         </tr>
                     </tbody>
                 </table>

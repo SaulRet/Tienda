@@ -21,8 +21,8 @@
                             <th th:text="#{cliente.correo}">Correo</th>
                             <th th:text="#{cliente.telefono}">Teléfono</th>
                             <th th:text="#{cliente.limite}">Límite</th>
-                            <th th:text="#{accion.eliminar}">Eliminar</th>
-                            <th th:text="#{accion.actualizar}">Modificar</th>
+                            <th th:text="#{accion.eliminar}" sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</th>
+                            <th th:text="#{accion.actualizar}" sec:authorize="hasRole('ROLE_ADMIN')">Modificar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,8 +33,8 @@
                             <td th:text="${cliente.telefono}"></td>
                             <td th:text="${#numbers.formatDecimal(cliente.credito.limite,3,2)}"
                                 style="text-align: right"></td>
-                            <td><a th:href="@{/cliente/eliminar/} + ${cliente.idCliente}" th:text="#{accion.eliminar}">Eliminar</a></td>
-                            <td><a th:href="@{/cliente/modificar/} + ${cliente.idCliente}" th:text="#{accion.actualizar}">Modificar</a></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/cliente/eliminar/} + ${cliente.idCliente}" th:text="#{accion.eliminar}">Eliminar</a></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/cliente/modificar/} + ${cliente.idCliente}" th:text="#{accion.actualizar}">Modificar</a></td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://wwww.w3.org/1999/xhtml">
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8"/>
@@ -10,7 +10,7 @@
         <header th:fragment="header" class="header"><!-- Etiqueta para ofrecerle al browser info de que es un encabezado -->        
             <nav class="nav"> <!-- Esta etiqueta es para ilustrarle al browser que posiblemente es un menú-->
                 <a th:href="@{/}" class="logo nav-link">TechShop</a>
-                <ul class="nav-menu">
+                <ul class="nav-menu" sec:authorize="hasRole('ROLE_VENDEDOR')">
                     <li class="nav-menu-item">
                         <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}"
                            th:text="#{plantilla.clientes}">Clientes</a>
@@ -30,9 +30,16 @@
         </header>
 
         <footer th:fragment="footer" class="footer">
-            <a th:href="@{/(lang=es)}">ES</a> |
-            <a th:href="@{/(lang=en)}">EN</a>
-            <p>&COPY [[#{plantilla.derechos}]]</p>
+            <div>
+                &COPY; [[#{plantilla.derechos}]]
+                <a th:href="@{/(lang=es)}">ES</a> |
+                <a th:href="@{/(lang=en)}">EN</a> |
+                User: <span sec:authentication="name">xx</span> |
+                Roles <span sec:authentication="principal.authorities">xx</span>
+                <form method="POST" th:action="@{/logout}" style="display: inline">
+                    <a href="#" onclick="this.parentNode.submit();">Logout</a>
+                </form>
+            </div>
         </footer>
     </body>
 </html>
