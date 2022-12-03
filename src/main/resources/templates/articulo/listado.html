@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
+        <section th:replace="cliente/fragmentosCliente :: botonesAgregar"/>
         <div class="contenido">
             <h2 th:text="#{articulo.titulo}">Listado de Artículos</h2>
             <a th:href="@{/articulo/nuevo}" th:text="#{articulo.nuevo}">Nuevo Artículo</a>

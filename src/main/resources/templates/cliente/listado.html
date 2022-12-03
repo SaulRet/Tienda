@@ -1,48 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
-            <h2 th:text="#{cliente.titulo}">Listado de Clientes</h2>
-            <a th:href="@{/cliente/nuevo}" th:text="#{cliente.nuevo}" >Nuevo Cliente</a>
-            </br>            
-            <a th:href="@{/cliente/buscar}">Buscar por Apellido</a>
-            <div th:if="${clientes != null and !clientes.empty}">
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th th:text="#{cliente.nombre}">Nombre</th>
-                            <th th:text="#{cliente.apellidos}">Apellidos</th>
-                            <th th:text="#{cliente.correo}">Correo</th>
-                            <th th:text="#{cliente.telefono}">Teléfono</th>
-                            <th th:text="#{cliente.limite}">Límite</th>
-                            <th th:text="#{accion.eliminar}" sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</th>
-                            <th th:text="#{accion.actualizar}" sec:authorize="hasRole('ROLE_ADMIN')">Modificar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="cliente : ${clientes}">
-                            <td th:text="${cliente.nombre}"></td>
-                            <td th:text="${cliente.apellidos}"></td>
-                            <td th:text="${cliente.correo}"></td>
-                            <td th:text="${cliente.telefono}"></td>
-                            <td th:text="${#numbers.formatDecimal(cliente.credito.limite,3,2)}"
-                                style="text-align: right"></td>
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/cliente/eliminar/} + ${cliente.idCliente}" th:text="#{accion.eliminar}">Eliminar</a></td>
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/cliente/modificar/} + ${cliente.idCliente}" th:text="#{accion.actualizar}">Modificar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div th:if="${clientes == null or clientes.empty}" th:text="#{cliente.no_mostrar}">
-                No tenemos lista de clientes que mostrar...
-            </div>
-        </div>
-        <footer th:replace="layout/plantilla :: footer"/>
+        <header th:replace="layout/plantilla :: header" />
+
+        <section th:replace="cliente/fragmentosCliente :: botonesAgregar"/>
+        <section th:replace="cliente/fragmentosCliente :: agregarCliente"/>
+        <section th:replace="cliente/fragmentosCliente :: listadoClientes"/>
+
+        <footer th:replace="layout/plantilla :: footer" />    
     </body>
 </html>
